@@ -6,14 +6,20 @@ import math
 
 
 def main():
-    canvas = Canvas(200, 60)
-    dot = Dot(int(canvas.width/2), int(canvas.height/2))
+    canvas = Canvas(900, 150, " ")
+    dot = Dot(math.sin(canvas.width)*10, math.cos(canvas.height)*5)
     canvas.add(dot)
 
+    count = 0
+
+    #make a circle
     while True:
         time.sleep(0.1)
-        canvas.draw()
-        dot.move(random.randint(-1,1),random.randint(-1,1))
+        canvas.pixel = "#"
+        canvas.draw(clean=False)
+        width = 4
+        dot.move(int(math.sin(count)*10*width), int(math.cos(count)*5*width))
+        count+=1
 
 
 if __name__=="__main__":

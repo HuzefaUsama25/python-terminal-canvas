@@ -1,10 +1,10 @@
 class Canvas:
-    def __init__(self, width=100, height=100):
+    def __init__(self, width=100, height=100, pixel=" "):
         self.width = width
         self.height = height
         self.grid = []
         self.objects = []
-        self.pixel = " "
+        self.pixel = pixel
         self.clean_grid()
 
     def clean_grid(self):
